@@ -15,5 +15,6 @@ res.json({result,suc:true})
 })
 .catch(err=>{
     res.json({err});
+    res.json(err);
 })
 }
