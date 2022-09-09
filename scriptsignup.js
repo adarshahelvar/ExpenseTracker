@@ -4,9 +4,10 @@ let phonenumber1=document.querySelector('#phonenumber');
 let pwd1=document.querySelector('#pwd');
 let btnsubmit=document.querySelector('#btnsubmit');
 
+
 btnsubmit.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log("im here")
+
 
     let name=name1.value;
     let email=email1.value;
@@ -20,18 +21,25 @@ btnsubmit.addEventListener('click',(e)=>{
         pwd:pwd
     };
 
+
+
+
+
     axios
       .post("http://localhost:8400/register",obj)
       .then((result) => {
-        console.log(result);
 
         if(result.data.suc==true){
-          alert("sign up  completed ! please login into your account")
+          alert("sign up  completed ! please login into your account");
+              name1.value="";
+              email1.value="";
+            phonenumber1.value="";
+            pwd1.value="";
+
+
         }
         else{
-            //  console.log(result.data);
-            console.log("sign up failed ! please login into your account ! user already exists")
-  if(result.data.errors[0].message=='email must be unique'){
+  if(result.data.errors[0].message=='phonenumber must be unique'||'email must be unique'){
     alert("user already exist ! please login")
   }
 
@@ -41,4 +49,6 @@ btnsubmit.addEventListener('click',(e)=>{
       .catch((err) => {
         console.log(err);
       });
+
+
 })

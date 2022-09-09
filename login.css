@@ -6,29 +6,32 @@ html {
     padding:0;
     font-family: sans-serif;
   }
+  
   .login-box {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 26vw;
-    padding: 20px;
     width: 24vw;
-    padding: 15px;
+    padding: 17px;
+  
     transform: translate(-50%, -50%);
-    background-image: url("https://freerangestock.com/thumbnail/137610/lonely-man-under-night-sky--starry-sky-over-the-horizon--conte.jpg");
+    background-image: url("https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/insert-image-html.jpg");
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
-  .login-box h4{
-    margin: 0 0 30px;
+  
+  .login-box h5{
+  margin-bottom: 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
+  
   .login-box .user-box {
     position: relative;
   }
+  
   .login-box .user-box input {
     width: 100%;
     padding: 10px 0;
@@ -58,6 +61,7 @@ html {
       appearance: none;
       margin: 0; 
   }
+  
   .login-box .user-box input:focus ~ label,
   .login-box .user-box input:valid ~ label {
     top: -20px;
@@ -65,7 +69,8 @@ html {
     color: #fefefe;
     font-size: 12px;
   }
-  .login-box form #btnsubmit {
+  
+  .login-box form #btnlogin {
     position: relative;
     display: inline-block;
     padding: 5px 10px;
@@ -74,18 +79,22 @@ html {
     text-decoration: none;
     overflow: hidden;
     transition: 1.5s;
-    margin-top: 4%;
-    margin-top: 5%;
+    margin-top: 6%;
     letter-spacing: 2px;
      background: rgb(242, 242, 247);
     border-radius: 7px;
     border: none;
     margin-left: 32%;
+  
   }
+  
+  
+  
   .login-box a span {
     position: absolute;
     display: block;
   }
+  
   .login-box a span:nth-child(1) {
     top: 0;
     left: -100%;
@@ -94,6 +103,7 @@ html {
     background: linear-gradient(90deg, transparent, #03e9f4);
     animation: btn-anim1 1s linear infinite;
   }
+  
   #welcomeotoexpense{
     text-align: center;
     margin-top: 30px;
@@ -103,11 +113,11 @@ html {
   }
   
   
-  #rtologin{
+  #rtosignup{
   
     text-decoration: none;
     right: 48%;
-    bottom: 10%;
+    bottom: 21%;
     position: absolute;
     padding: 10px;
     background-color: rgba(8, 8, 236, 0.886);
