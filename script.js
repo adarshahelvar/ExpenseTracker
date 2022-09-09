@@ -6,6 +6,7 @@ let btnsubmit=document.querySelector('#btnsubmit');
 
 btnsubmit.addEventListener('click',(e)=>{
     e.preventDefault();
+    console.log("im here")
 
     let name=name1.value;
     let email=email1.value;
@@ -23,10 +24,21 @@ btnsubmit.addEventListener('click',(e)=>{
       .post("http://localhost:8400/register",obj)
       .then((result) => {
         console.log(result);
+
+        if(result.data.suc==true){
+          alert("sign up  completed ! please login into your account")
+        }
+        else{
+            //  console.log(result.data);
+            console.log("sign up failed ! please login into your account ! user already exists")
+  if(result.data.errors[0].message=='email must be unique'){
+    alert("user already exist ! please login")
+  }
+
+              }
+
       })
       .catch((err) => {
         console.log(err);
       });
-
-
 })

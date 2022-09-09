@@ -7,6 +7,7 @@ let {name,email,phonenumber,pwd}=req.body;
 
 let password=await bcrypt.hash(pwd,10);
 
+
 User.create({
     name,email,phonenumber,password
 })
