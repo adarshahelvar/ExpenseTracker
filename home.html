@@ -27,9 +27,10 @@
   <body>
     <div id="nav">
       <h5 class="wel">EXPENSE TRACKER</h5>
+      <button id="buysub" class="premium">Buy Premium</button>
 
       <div id="user">
-        <h5 id="userwelcome">welcome</h5>
+        <h5 id="userwelcome"></h5>
         <h5 class="userdetail"></h5>
         <div id="dropshow"><i id="droper" class="fa-solid fa-caret-down fa-lg"></i></div>
       </div>
@@ -42,14 +43,15 @@
 
     <div class="dropoptions">
       <ul class="droplist">
-        <li id="hidedrop">Close</li>
-        <!-- <li><a href="">profile</a></li> -->
-        <li><button id="buysub">Buy Premium</button></li>
-             <div class="subfeatures"></div>
+        <button class="drop1"><li id="hidedrop">Close</li></button>
         
-        <li class="text-danger" id="logout">Sign out</li>
+        <!-- <li><a href="">profile</a></li> -->
+        <div class="subfeatures"></div>
+        
+        <button class="drop1"><li class="text-danger" id="logout">Sign out</li></button>
       </ul>
     </div>
+    <!-- <button id="buysub">Buy Premium</button> -->
 
     <!--  -->
 
@@ -60,11 +62,10 @@
       <select id="category">
 
         <option value="">Select Category</option>
-        <option value="food">food</option>
-        <option value="fuel">fuel</option>
-        <!-- <option value="glosaries">glosaries</option>
-        <option value="electricity">electricity</option>
-        <option value="gas">gas</option> -->
+        <option value="food">Food</option>
+        <option value="fuel">Fuel</option>
+        <option value="glosaries">Glosaries</option>
+        <option value="electricity">Electricity</option>
         <option value="others">others</option>
       </select>
        
@@ -82,10 +83,15 @@
 
 
     </div>
+
+      <div class="pag text-center my-4">
+
+
+    </div>
       <div class="exphead">
-        <span class="exphead1">amount</span>
-        <span class="exphead2">category</span>
-        <span class="exphead3">description</span>
+        <span class="exphead1">Amount</span>
+        <span class="exphead2">Category</span>
+        <span class="exphead3">Description</span>
       </div>
       <div class="expensedetails"></div>
       
@@ -93,6 +99,14 @@
 
     </div>
     <div id="alertpopup"></div>
+
+    <div class="text-center my-5">
+        <canvas id="myChart1"  ></canvas>
+
+</div>
+
+
+
 
      <div class="text-center my-5">
               <canvas id="myChart1"  ></canvas>
@@ -123,6 +137,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <script src="scripthome.js"></script>

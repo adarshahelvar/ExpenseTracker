@@ -17,12 +17,17 @@ btnsubmit.addEventListener('click',(e)=>{
   axios.post("http://localhost:8400/login", obj)
   .then(result=>{
     if(result.data.msg=='login successful'){
+        console.log(result.data)
+        alert('login successfully');
       localStorage.setItem('token',result.data.token);
       location.replace('home.html');
     }
   })
   .catch(err=>{
-  console.log(err);
+    if(err.response.status==404||401){
+
+        alert("user not found")
+    }
   })
 
 

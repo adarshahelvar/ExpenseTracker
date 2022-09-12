@@ -127,32 +127,18 @@ html {
   }
 
 
-
-  footer .footer-title{
-    text-align: center;
-    color:white;
-    width:50%;
-    font-size:50px;
-    font-weight:bold;
-    margin:0 auto;
-}
-footer .footer-icons{
-    width:50%;
-    display:flex;
-    align-items:center;
-    /* justify-content: space-around; */
-}
-.footer-icons ul{
-    list-style-type: none;
-    display:flex;
-}
-.footer-icons li{
-    /* padding:10px; */
-    margin:0px 20px;
-}
-.footer-icons li:hover{
-    background:rgb(91, 10, 221);
-}
-.footer-icons img{
-    width:40px;
-}
+  #forgotpassword{
+    color: rgb(251, 6, 6);
+    margin-top: 15px;
+  
+    float: right;
+    margin-top: 17%;
+    margin-right: 20%;
+    font-size: large;
+  }
+  #signer{
+    color: white;
+  }
+  .signer{
+    margin-top: 10px;
+  }

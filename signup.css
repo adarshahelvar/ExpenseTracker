@@ -86,6 +86,12 @@ html {
     position: absolute;
     display: block;
   }
+
+  #signerup{
+    margin-top: 3%;
+  }
+
+  
   .login-box a span:nth-child(1) {
     top: 0;
     left: -100%;
@@ -117,40 +123,3 @@ html {
   }
 
 
-
-  footer .footer-title{
-    text-align: center;
-    color:white;
-    width:50%;
-    font-size:50px;
-    font-weight:bold;
-    margin:0 auto;
-
-    position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: red;
-  color: white;
-  text-align: center;
-}
-footer .footer-icons{
-    width:50%;
-    display:flex;
-    align-items:center;
-    /* justify-content: space-around; */
-}
-.footer-icons ul{
-    list-style-type: none;
-    display:flex;
-}
-.footer-icons li{
-    /* padding:10px; */
-    margin:0px 20px;
-}
-.footer-icons li:hover{
-    background:rgb(91, 10, 221);
-}
-.footer-icons img{
-    width:40px;
-}

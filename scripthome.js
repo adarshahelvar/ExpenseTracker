@@ -15,8 +15,9 @@ let hidedrop = document.querySelector("#hidedrop");
 let body = document.querySelector("body");
 let subfeature = document.querySelector(".subfeatures");
 let whitetheme=document.querySelector('#whitetheme');
+let pag=document.querySelector('.pag');
 addexpensebtn.addEventListener('click',(e)=>{
-    let token = localStorage.getItem("token");
+let token = localStorage.getItem("token");
 
     e.preventDefault();
     let amount=amount1.value;
@@ -54,14 +55,86 @@ else{
 document.addEventListener('DOMContentLoaded',()=>{
         let token = localStorage.getItem("token");
 
+        axios
+        .get("http://localhost:8400/getexpenses", {
+          headers: { authorization: token },
+        })
+        .then((result) => {
+          let k1 = 0;
+          let k2 = 0;
+          let k3 = 0;
+          let k4 = 0;
+          let k5 = 0;
+          let k6 = 0;
+          console.log(result.data.result[1].category);
+
+          for (let j = 0; j < result.data.result.length; j++) {
+            if (result.data.result[j].category == "food") {
+              k1 += result.data.result[j].amount;
+            }
+            if (result.data.result[j].category == "glosaries") {
+              k2 += result.data.result[j].amount;
+            }
+            if (result.data.result[j].category == "gas") {
+              k3 += result.data.result[j].amount;
+            }
+            if (result.data.result[j].category == "fuel") {
+              k4 += result.data.result[j].amount;
+            }
+            if (result.data.result[j].category == "electricity") {
+              k5 += result.data.result[j].amount;
+            }
+            if (result.data.result[j].category == "others") {
+              k6 += result.data.result[j].amount;
+            }
+          }
+            console.log(k1,k2,k3,k4,k5,k6);
+          let xValues = [
+            "food",
+            "fuel",
+            "electricity",
+            "gas",
+            "glosaries",
+            "others",
+          ];
+          let yValues = [k1, k4, k5, k3, k2, k6];
+          let barColors = [
+            "red",
+            "green",
+            "blue",
+            "orange",
+            "yellow",
+            "black",
+          ];
+
+        //   new Chart("myChart1", {
+        //     // type: "line",
+        //     data: {
+        //       labels: xValues,
+        //       datasets: [
+        //         {
+        //           backgroundColor: barColors,
+        //           data: yValues,
+        //         },
+        //       ],
+        //     },
+        //     options: {
+        //       title: {
+        //         display: true,
+        //         text: "All Expenses",
+        //       },
+        //     },
+        //   });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
 
 axios.get("http://localhost:8400/getuserdata",{ headers: {"authorization" : token} })
 .then(result=>{
-
 if(result.data.suc=='yes'){
-
   userdeatail.innerHTML = result.data.result[0].name.split(" ")[0];
-
 }
 
 })
@@ -76,8 +149,7 @@ getallexpenses();
 function getallexpenses(){
         let token = localStorage.getItem("token");
 
-    axios
-      .get("http://localhost:8400/getexpenses", {
+    axios.get("http://localhost:8400/limitexpenses?page=0&limit=10", {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -86,13 +158,14 @@ function getallexpenses(){
 
         for (let i = 0; i < result.data.result.length; i++) {
           let res = result.data.result[i];
+            console.log(res.id);
 
           allexp += `
         <div class="singleexpense">
         <span class="gprice">${res.amount}</span>
         <span class="gcategory">${res.category}</span>
-        <span class="gdescription">${res.description}</span>
-        <button id=${res.id} style="background-color:green; float:right; color:white; border:none; padding:6px; margin-top:-8px;">Delete<i class="fa-solid fa-trash"></i></button>
+        <span class="gdescription" style="font-size:14px;">${res.description}</span>
+        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
         </div>
         `;
         }
@@ -151,17 +224,17 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((result) => {
       if (result.data.result[0].issubcribed == true) {
         subfeature.innerHTML = `
-     <li class="text-dark" id="subscriptiontheme" >Change Theme</li>
-                  <li><a href="board.html" id="leaderboard">See Leaderboard</a></li>
-             <li><a href="
-             report.html" id="report"></a></li>`;
+        <br>
+        <button class='drop1'> <li class="text-dark" id="subscriptiontheme" >Change Theme</li> </button><br><br>
+     <button class="drop1"> <li><a href="board.html" id="leaderboard">See Leaderboard</a></li></button><br><br>
+     <button class="drop1"><li><a href="report.html" id="report"> Expense Report</a></li></button><br><br>`;
 
         let subscriptiontheme = document.querySelector("#subscriptiontheme");
         let leaderboard = document.querySelector("#leaderboard");
         let report = document.querySelector("#report");
 
         subscriptiontheme.addEventListener("click", () => {
-          body.style.backgroundColor='green';
+          body.style.backgroundColor='black';
         });
 
       }
@@ -207,6 +280,7 @@ async function buySubscription(e){
               )
               .then(() => {
                 alert("You are a Premium User Now");
+                location.reload();
               })
               .catch(() => {
                 alert("Something went wrong. Try Again!!!");
@@ -231,6 +305,8 @@ async function buySubscription(e){
 
   }
 
+
+
   expensedetails.addEventListener('click',(e)=>{
     let token=localStorage.getItem('token');
 
@@ -250,3 +326,64 @@ async function buySubscription(e){
 console.log(e.target.parentElement.id);
     }
   })
+
+
+  let c = 0;
+let cc = 1;
+
+let k = Number(localStorage.getItem("count"));
+
+function btnlimit() {
+  let token = localStorage.getItem("token");
+  axios
+    .get(`http://localhost:8400/getexpenses`, {
+      headers: { authorization: token },
+    })
+    .then((result) => {
+      let k = 10;
+
+      let j = Math.trunc((result.data.result.length / k) + 1);
+      console.log(k);
+
+      for (let i = 0; i < j; i++) {
+        pag.innerHTML += `<button class="allbtns" id="?page=${c++}&limit=${k}">${cc++}</button> `;
+      }
+    });
+}
+pag.addEventListener("click", (e) => {
+  let token = localStorage.getItem("token");
+  console.log(e.target.id);
+  let t = e.target.id;
+
+  axios
+    .get(`http://localhost:8400/limitexpenses${t}`, {
+      headers: { authorization: token },
+    })
+    .then((result) => {
+              let allexp = "";
+              console.log(result);
+
+              for (let i = 0; i < result.data.result.length; i++) {
+                let res = result.data.result[i];
+                console.log(res.id);
+
+                allexp += `
+        <div class="singleexpense" >
+        <span class="gprice">${res.amount}</span>
+        <span class="gcategory">${res.category}</span>
+        <span class="gdescription" style="font-size:16px;">${res.description}</span>
+        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        `;
+              }
+              expensedetails.innerHTML = allexp;
+
+
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+btnlimit();

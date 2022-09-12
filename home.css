@@ -5,10 +5,11 @@
   }
   
   #nav{
-    background-color: rebeccapurple;
+    background-color: rgb(222, 242, 132);
     padding: 9px;
     display: flex;
     width: 100%;
+    height: 20%;
   
   }
   #user{
@@ -16,19 +17,26 @@
   
   }
   #userwelcome{
+
   margin-left: 56vw;
   color: rebeccapurple;
   letter-spacing: 2px;
   }
   .userdetail{
     margin-left: 1%;
-    color: white;
+    color: rebeccapurple;
+  }
+  .drop1{
+    border-radius: 20px;
+    width: 80%;
+    border-style: dashed;
   }
   .wel{
-    color: rgb(247, 249, 249);
+    color: rgb(8, 8, 8);
     margin-left: 10px;
     text-align: center;
     margin-left: 120px;
+    
   }
   #regform{
   
@@ -36,7 +44,7 @@
     width: 85%;
     margin: auto;
     padding: 15px;
-    background-color: rebeccapurple;
+    background-color: rgb(135, 196, 199);
     margin-top: 40px;
   
   }
@@ -55,7 +63,16 @@
   }
   #buysub{
     border: none;
-    background-color:blueviolet;
+    position: absolute;
+    transition-duration: 0.4s;
+    border-radius: 30%;
+    display:flex;
+    color: rgb(86, 83, 83);
+    background-color:rgb(172, 224, 241);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
   }
   .adex{
     text-align: center;
@@ -91,14 +108,29 @@
   
   
   }
-  #addexpensebtn{
+
+  .allbtns{
     border: none;
-    background-color:green;
+    padding: 7px;
+    background-color: blue;
     color: white;
+    width: 40px;
+  }
+  .fot{
+      width: 100%;
+      background-color: black;
+      display: grid;
+      place-items: center;
+  
+  }
+  
+  #addexpensebtn{
+    background-color: azure;
+    color: rgb(16, 15, 15);
     padding: 8px;
-    border-radius: 6px;
-    margin-left: 440px;
-    margin-top: 10px;
+    border-radius: 60px;
+    margin-left: 1180px;
+    /* margin-top: 10px;  */
   }
   option:hover{
     background-color: blue;
@@ -106,10 +138,11 @@
   }
   
   #expensebox{
+    
     width: 85%;
     margin: auto;
     margin-top: 50px;
-    background-color: rebeccapurple;
+    background-color: rgb(172, 224, 241);
     padding: 20px;
   }
   .singleexpense{
@@ -209,7 +242,7 @@
     font-weight: 500;
   }
   .dropoptions{
-    background-color: green;
+    background-color: rgb(182, 235, 182);
     border: 1.5px solid green;
     width: 12vw;
     padding: 0px;
@@ -233,6 +266,7 @@
       }
       .adex{
         margin-bottom: 40px;
+        
       }
       #category{
         width: 95%;

@@ -22,8 +22,14 @@ Expense.belongsTo(User);
 User.hasMany(Order);
 Order.belongsTo(User);
 
+// User.hasMany(ForgotPassword);
+// ForgotPassword.belongsTo(User);
+
 app.use(SignUpLogin);
 app.use(homerouter)
+
+app.use(homerouter);
+// app.use(resetrouter);
 
 
 
