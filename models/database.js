@@ -6,3 +6,4 @@ const sequelize = new Sequelize("expensetracker", "root", "123456", {
 });
 
 module.exports = sequelize
+

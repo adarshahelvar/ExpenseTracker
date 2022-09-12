@@ -1,0 +1,63 @@
+.table{
+    /* background-color: blue; */
+    align-content: center;
+    border: 4px;
+    border-color: black;
+    text-align: center;
+    
+}
+
+.mainbar{
+    background-color: rebeccapurple;
+    display: flex;
+    padding: 10px;
+}
+#home{
+    color: white;
+    text-decoration: none;
+    margin-left: 40%;
+}
+.logout{
+    color: grren;
+    list-style: none;
+    font-weight: 600;
+    margin-left: 47%;
+    cursor: pointer;
+    
+}
+.maincon{
+    width: 1170%;
+}
+
+.social {
+    background-color: red;
+}
+
+footer .footer-title{
+    text-align: center;
+    color:white;
+    width:50%;
+    font-size:50px;
+    font-weight:bold;
+    margin:0 auto;
+}
+footer .footer-icons{
+    width:50%;
+    display:flex;
+    align-items:center;
+    /* justify-content: space-around; */
+}
+.footer-icons ul{
+    list-style-type: none;
+    display:flex;
+}
+.footer-icons li{
+    padding:10px;
+    margin:0px 10px;
+}
+.footer-icons li:hover{
+    background:rgb(91, 10, 221);
+}
+.footer-icons img{
+    width:40px;
+}
