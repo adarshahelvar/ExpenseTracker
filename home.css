@@ -41,10 +41,10 @@
   #regform{
   
     margin-top: 20px;
-    width: 85%;
+    width: 100%;
     margin: auto;
     padding: 15px;
-    background-color: rgb(135, 196, 199);
+    background-color: rgb(172, 224, 241);
     margin-top: 40px;
   
   }
@@ -74,11 +74,19 @@
     overflow: hidden;
     cursor: pointer;
   }
+  .prmbtm {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1%;
+    left: 50%;
+  }
   .adex{
     text-align: center;
     margin-bottom: 20px;
     margin-left: 3%;
     color: black;
+    border: 10px;
   }
   #category{
   font-weight: 550;
@@ -109,13 +117,6 @@
   
   }
 
-  .allbtns{
-    border: none;
-    padding: 7px;
-    background-color: blue;
-    color: white;
-    width: 40px;
-  }
   .fot{
       width: 100%;
       background-color: black;
@@ -139,9 +140,9 @@
   
   #expensebox{
     
-    width: 85%;
+    width: 100%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 0px;
     background-color: rgb(172, 224, 241);
     padding: 20px;
   }
@@ -180,6 +181,17 @@
     font-weight: 500;
   
   
+  }
+  .allbtns{
+    border: dotted;
+    border-radius: 20px;
+    padding: 7px;
+    background-color: rgb(4, 4, 5);
+    color: white;
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    
   }
   
   #alertpopup{

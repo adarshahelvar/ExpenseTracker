@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
 
         for(let i=0;i<result.data.length;i++){
 let date = result.data[i].createdAt.split("T")[0];
-            res += ` <tr class="table-light">
+            res += ` <tr class="table table-striped table-dark">
               <td >${date}</td>
               <td>${result.data[i].category}</td>
               <td>${result.data[i].description}</td>
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       for (let i = 0; i < result.data.length; i++) {
         let date = result.data[i].createdAt.split("T")[0];
-        res += ` <tr class="table-light">
+        res += ` <tr class="table table-striped table-dark">
               <td >${date}</td>
               <td>${result.data[i].category}</td>
               <td>${result.data[i].description}</td>
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
       for (let i = 0; i < result.data.length; i++) {
         let date = result.data[i].createdAt.split("T")[0];
-        res += ` <tr class="table-light">
+        res += ` <tr class="table table-striped table-dark">
               <td >${date}</td>
               <td>${result.data[i].category}</td>
               <td>${result.data[i].description}</td>

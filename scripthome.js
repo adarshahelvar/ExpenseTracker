@@ -107,24 +107,6 @@ document.addEventListener('DOMContentLoaded',()=>{
             "black",
           ];
 
-        //   new Chart("myChart1", {
-        //     // type: "line",
-        //     data: {
-        //       labels: xValues,
-        //       datasets: [
-        //         {
-        //           backgroundColor: barColors,
-        //           data: yValues,
-        //         },
-        //       ],
-        //     },
-        //     options: {
-        //       title: {
-        //         display: true,
-        //         text: "All Expenses",
-        //       },
-        //     },
-        //   });
         })
         .catch((err) => {
           console.log(err);
@@ -149,7 +131,7 @@ getallexpenses();
 function getallexpenses(){
         let token = localStorage.getItem("token");
 
-    axios.get("http://localhost:8400/limitexpenses?page=0&limit=10", {
+    axios.get("http://localhost:8400/limitexpenses?page=0&limit=5", {
         headers: { authorization: token },
       })
       .then((result) => {
@@ -165,7 +147,7 @@ function getallexpenses(){
         <span class="gprice">${res.amount}</span>
         <span class="gcategory">${res.category}</span>
         <span class="gdescription" style="font-size:14px;">${res.description}</span>
-        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
+        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"> Remove</i></button>
         </div>
         `;
         }
@@ -372,7 +354,7 @@ pag.addEventListener("click", (e) => {
         <span class="gprice">${res.amount}</span>
         <span class="gcategory">${res.category}</span>
         <span class="gdescription" style="font-size:16px;">${res.description}</span>
-        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash"></i></button>
+        <button id="${res.id}"  style="background-color:red; float:right; color:white; border:none; padding:6px; margin-top:-8px;"><i class="fa-solid fa-trash">Remove</i></button>
         </div>
         `;
               }
