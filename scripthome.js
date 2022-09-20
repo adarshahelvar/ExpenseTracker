@@ -328,7 +328,7 @@ function btnlimit() {
       console.log(k);
 
       for (let i = 0; i < j; i++) {
-        pag.innerHTML += `<button class="allbtns" id="?page=${c++}&limit=${k}">${cc++}</button> `;
+        // pag.innerHTML += `<button class="allbtns" id="?page=${c++}&limit=${k}">${cc++}</button> `;
       }
     });
 }

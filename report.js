@@ -65,16 +65,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
 });
 
-
-
-
-
-
-
-
-// 
-
-
 document.addEventListener("DOMContentLoaded", (e) => {
   let token = localStorage.getItem("token");
   axios
@@ -112,7 +102,7 @@ k3+=result.data[i].amount;
         }
         if(result.data[i].category=='others'){
 
-k6+=result.data[i].amount;
+        k6+=result.data[i].amount;
         }
       }
     //   console.log(k1,k2,k3,k4,k5,k6);
